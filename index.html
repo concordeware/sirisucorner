@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sirius's Corner</title>
+        <link id="site-favicon" rel="icon" type="image/svg+xml">
+        <script src="js/app.js" defer></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header class="site-header">
+            <h1>Sirius's Corner</h1>
+            <div class="splash-banner">
+                <button id="splash" type="button" aria-label="Show another splash">
+                    <span id="splash-track" class="splash-track"></span>
+                </button>
+            </div>
+        </header>
+        <div class="site-layout">
+            <aside class="sidebar">
+                <div id="search-controls" class="game-search-controls">
+                    <div class="input-wrapper">
+                        <svg class="input-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="10.8" cy="10.8" r="6.3" fill="none" stroke="currentColor" stroke-width="2.4"></circle>
+                            <path d="m15.5 15.5 5 5" fill="none" stroke="currentColor" stroke-width="2.4"></path>
+                        </svg>
+                        <input id="search" class="search-input" placeholder="search..." aria-label="Search games">
+                    </div>
+                    <button id="reload-games" class="reload-games-button" type="button" aria-label="Reload games">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M20 7v5h-5M4 17v-5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M5.6 9a7 7 0 0 1 11.5-2L20 12M4 12l2.9 5a7 7 0 0 0 11.5-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </button>
+                </div>
+                <br>
+                <nav class="page-nav" aria-label="Pages">
+                    <button id="games-view-button" class="bar active" type="button" aria-pressed="true">Games</button>
+                    <button id="ugs-view-button" class="bar" type="button" aria-pressed="false">UGS</button>
+                    <button id="settings-view-button" class="bar" type="button" aria-pressed="false">Settings</button>
+                </nav>
+                <div id="game-controls">
+                    <nav id="catagories" class="catagories" aria-label="Game categories"></nav>
+                </div>
+            </aside>
+            <main class="games-area">
+                <div id="games-page">
+                    <br><br>
+                    <div class="container" id="container"></div>
+                </div>
+                <section id="ugs-page" hidden aria-label="UGS games">
+                    <div class="ugs-layout">
+                        <nav id="sidebar" class="ugs-sidebar" aria-label="UGS game letters"></nav>
+                        <div id="sections-container" class="ugs-sections"></div>
+                    </div>
+                </section>
+                <section id="settings-page" aria-labelledby="settings-title" hidden>
+                    <h2 id="settings-title">Settings</h2>
+                    <label class="setting-option" for="open-in-new-tab"><input id="open-in-new-tab" type="checkbox"><span>Open in new tab</span></label>
+                </section>
+                <section id="credits-page" aria-labelledby="credits-title" hidden>
+                    <h2 id="credits-title">Credits</h2>
+                    <p>Made by Sirius & Friends!</p>
+                </section>
+            </main>
+        </div>
+        <footer class="site-footer">
+            <button id="credits-view-button" class="footer-link" type="button" aria-pressed="false">Credits</button>
+        </footer>
+    </body>
+</html>
