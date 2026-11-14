@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sirius's Corner - Launcher</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+        --bg: #09090b;
+        --surface: #121215;
+        --border: #27272a;
+        --text: #fafafa;
+        --text-muted: #a1a1aa;
+        --accent: #fafafa;
+        --accent-text: #09090b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      min-height: 100vh; margin: 0; background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif;
+    }
+    .launcher-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+      padding: 32px; width: 100%; max-width: 400px; text-align: center;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+    }
+    h1 { font-size: 1.25rem; font-weight: 700; margin: 0 0 8px 0; }
+    p { color: var(--text-muted); font-size: 0.875rem; margin: 0 0 24px 0; }
+    .launch-btn {
+      background: var(--accent); color: var(--accent-text); border: none; border-radius: 8px;
+      width: 100%; padding: 12px; font-family: inherit; font-size: 0.9rem; font-weight: 600; cursor: pointer;
+    }
+    .launch-btn:hover { background: #e4e4e7; }
+  </style>
+</head>
+<body>
+  <div class="launcher-card">
+    <h1>Sirius's Corner</h1>
+    <p>Launch your unblocked dashboard securely.</p>
+    <button class="launch-btn" id="launchButton" type="button">Launch Site</button>
+  </div>
+
+  <script>
+    document.getElementById('launchButton').addEventListener('click', () => {
+      const win = window.open('about:blank', '_blank');
+      if (win) {
+        win.document.open();
+        win.document.write(`
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <title>Sirius's Corner</title>
+              <base href="https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/main/">
+              <link rel="stylesheet" href="style.css">
+              <script src="js/app.js" defer><\/script>
+          </head>
+          <body>
+              <h1>Loading Sirius's Corner...</h1>
+          </body>
+          </html>
+        `);
+        win.document.close();
+      }
+    });
+  </script>
+</body>
+</html>
